@@ -37,7 +37,9 @@ nota: es importante cambiar las direcciones donde se guardaran los registros y l
 Supuestos del Programa
 
 Sistema Operativo: El programa está diseñado para sistemas Linux y se piensa que el dispositivo de entrada del teclado se encuentra en /dev/input/.
+
 Permisos: El programa debe ser ejecutado con permisos de root para acceder a los eventos de teclado y crear directorios y tomar capturas de pantalla.
+
 Dependencias: Se necesita que scrot esté instalado en el sistema. Si no es así, puedes instalarlo con: sudo apt-get install scrot
 
 Casos de uso 
