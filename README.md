@@ -19,9 +19,11 @@ Librerías de C (stdio.h, fcntl.h, unistd.h, linux/input.h, sys/stat.h, string.h
 
 Instalación
 
-Clonar el repositorio git clone https://github.com/dramirez1021/keylogger.git
-Compilar el programa gcc -o keylogger_ss.c
-Ejecutar el programa como root sudo./keylogger_ss
+1-Clonar el repositorio: git clone https://github.com/dramirez1021/keylogger.git
+
+2-Compilar el programa: gcc -o keylogger_ss.c
+
+3-Ejecutar el programa como root: sudo./keylogger_ss
 
 Instrucciones de uso
 
@@ -34,7 +36,7 @@ El archivo de registro de teclas (keylogger.txt) estará ubicado en /home/tu_usu
 Las capturas de pantalla estarán en el directorio /home/tu_usuario/Documentos/seguridad_informatica/screenshots/
 sudo apt-get install scrot
 
-nota: es importante cambiar las direcciones donde se guardaran los registros y las ss de lo contrario el codigo no compilara ya que no encontrara las direcciones.
+nota: es importante cambiar las direcciones donde se guardaran los registros y las ss de lo contrario el codigo no compilara ya que no encontrara las direcciones para guardar los registros.
 
 Supuestos del Programa
 
