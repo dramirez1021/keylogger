@@ -5,7 +5,9 @@ Este programa es un keylogger básico el cual registra las teclas presionadas en
 Características
 
 Registro de teclas: Captura todas las teclas presionadas en un archivo de texto (keylogger.txt).
+
 Captura de pantalla: Realiza capturas de pantalla cada minuto y las guarda en un directorio (screenshots).
+
 Gestión de teclas especiales: Maneja teclas como Shift, AltGr y Caps Lock para capturar caracteres especiales.
 
 Requisitos
