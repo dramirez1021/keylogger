@@ -21,7 +21,7 @@ Librerías de C (stdio.h, fcntl.h, unistd.h, linux/input.h, sys/stat.h, string.h
 
 1-Clonar el repositorio: git clone https://github.com/dramirez1021/keylogger.git
 
-2-Compilar el programa: gcc -o keylogger_ss.c
+2-Compilar el programa: gcc -o keylogger_ss keylogger_ss.c
 
 3-Ejecutar el programa como root: sudo./keylogger_ss
 
