@@ -63,7 +63,7 @@ int main() {
 
         if (ev.type == EV_KEY) {
             handleSpecialKeys(ev.code, ev.value, &shift, &altGr, &capsLock);
-            if (ev.value == 0) { // Key release
+            if (ev.value == 0) { 
                 char keyChar = getKeyChar(ev.code, shift, altGr, capsLock);
                 if (keyChar != '\0') {
                     if (keyChar == '\b') {
