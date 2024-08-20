@@ -192,7 +192,6 @@ char getKeyChar(int keycode, int shift, int altGr, int capsLock) {
     if (altGr) {
         switch (keycode) {
             case KEY_Q: key = '@'; break;
-            // Otros casos que consideres necesarios para tu teclado
         }
     }
 
